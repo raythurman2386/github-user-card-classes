@@ -8,13 +8,14 @@ class App extends Component {
 
   // componentDidMount to fetch data
   componentDidMount() {
-    fetch('https://api.github.com/users/raythurman2386/')
+    fetch('https://api.github.com/users/raythurman2386')
       .then(res => res.json())
-      .then(data => this.setState({ data: data.message }))
+      .then(data => this.setState({ data: data }))
       .catch(err => console.log(err.response))
   }
 
   render() {
+    // console.log(this.state.data)
     return (
       <div>
         <h1>Hello</h1>
