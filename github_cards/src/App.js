@@ -18,7 +18,7 @@ class App extends Component {
     // console.log(this.state.data)
     return (
       <div>
-        <h1>Hello</h1>
+        <h1>{this.state.data.login}</h1>
       </div>
     )
   }
