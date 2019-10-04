@@ -27,6 +27,8 @@ class App extends Component {
     return (
       <div>
         <Card user={this.state.user} />
+        {this.state.followers &&
+          this.state.followers.map(follower => <Card user={follower} />)}
       </div>
     )
   }
