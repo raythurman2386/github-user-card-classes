@@ -21,14 +21,15 @@ const Wrapper = styled.div`
   width: 250px;
   padding: 1rem;
   margin: 1rem auto;
-  box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #888;
+  background: white;
 
   img {
     width: 98%;
   }
 
   :hover {
-    box-shadow: 0 10px 16px -6px #777;
+    box-shadow: 0 10px 16px -6px #888;
     transition: 0.4s ease;
   }
 `

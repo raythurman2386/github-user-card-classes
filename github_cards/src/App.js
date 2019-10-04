@@ -30,7 +30,9 @@ class App extends Component {
         <HeaderStyles>My Github Followers</HeaderStyles>
         <AppWrapper>
           {this.state.followers &&
-            this.state.followers.map(follower => <Card user={follower} />)}
+            this.state.followers.map((follower, index) => (
+              <Card user={follower} key={index} />
+            ))}
         </AppWrapper>
       </>
     )
