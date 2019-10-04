@@ -26,16 +26,25 @@ class App extends Component {
   render() {
     console.log(this.state.followers)
     return (
-      <AppWrapper>
+      <>
         <Card user={this.state.user} />
-        {this.state.followers &&
-          this.state.followers.map(follower => <Card user={follower} />)}
-      </AppWrapper>
+        <HeaderStyles>My Github Followers</HeaderStyles>
+        <AppWrapper>
+          {this.state.followers &&
+            this.state.followers.map(follower => <Card user={follower} />)}
+        </AppWrapper>
+      </>
     )
   }
 }
 
 export default App
+
+const HeaderStyles = styled.h1`
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding: 2rem 0;
+`
 
 const AppWrapper = styled.div`
   max-width: 1280px;
@@ -43,4 +52,6 @@ const AppWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
 `
