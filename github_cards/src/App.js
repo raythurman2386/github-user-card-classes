@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.followers)
     return (
       <>
         <Card user={this.state.user} />
