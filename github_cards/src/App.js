@@ -1,24 +1,34 @@
 import React, { Component } from 'react'
 
+import Card from './components/Card'
+
 class App extends Component {
   // set up state for my card data
   state = {
-    data: [],
+    user: [],
+    followers: [],
   }
 
   // componentDidMount to fetch data
   componentDidMount() {
     fetch('https://api.github.com/users/raythurman2386')
       .then(res => res.json())
-      .then(data => this.setState({ data: data }))
+      .then(data => this.setState({ user: data }))
+      .catch(err => console.log(err.response))
+
+    fetch('https://api.github.com/users/raythurman2386/followers')
+      .then(res => res.json())
+      .then(data => this.setState({ followers: data }))
       .catch(err => console.log(err.response))
   }
 
   render() {
-    // console.log(this.state.data)
+    console.log(this.state.followers)
     return (
       <div>
-        <h1>{this.state.data.login}</h1>
+        <Card user={this.state.user} />
+        {this.state.followers &&
+          this.state.followers.map(follower => <Card user={follower} />)}
       </div>
     )
   }
