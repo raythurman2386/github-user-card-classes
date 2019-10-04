@@ -26,11 +26,11 @@ class App extends Component {
   render() {
     console.log(this.state.followers)
     return (
-      <div>
+      <AppWrapper>
         <Card user={this.state.user} />
         {this.state.followers &&
           this.state.followers.map(follower => <Card user={follower} />)}
-      </div>
+      </AppWrapper>
     )
   }
 }
