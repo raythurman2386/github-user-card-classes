@@ -36,3 +36,11 @@ class App extends Component {
 }
 
 export default App
+
+const AppWrapper = styled.div`
+  max-width: 1280px;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
