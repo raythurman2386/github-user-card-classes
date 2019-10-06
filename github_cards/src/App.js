@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     user: [],
     followers: [],
+    isVisible: false,
   }
 
   // componentDidMount to fetch data
@@ -24,13 +25,21 @@ class App extends Component {
       .catch(err => console.log(err.response))
   }
 
+  handleChange = e => {
+    this.setState({
+      isVisible: !this.state.isVisible,
+    })
+  }
+
   render() {
     return (
       <>
         <MyCard user={this.state.user} />
-        <HeaderStyles>My Github Followers</HeaderStyles>
+        <HeaderStyles onClick={this.handleChange}>
+          My Github Followers
+        </HeaderStyles>
         <AppWrapper>
-          {this.state.followers &&
+          {this.state.isVisible &&
             this.state.followers.map((follower, index) => (
               <Card user={follower} key={index} />
             ))}
@@ -46,6 +55,8 @@ const HeaderStyles = styled.h1`
   text-align: center;
   border-bottom: 1px solid gray;
   padding: 2rem 0;
+  color: white;
+  cursor: pointer;
 `
 
 const AppWrapper = styled.div`
