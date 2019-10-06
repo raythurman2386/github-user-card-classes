@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import MyCard from './components/MyCard'
 import Card from './components/Card'
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Card user={this.state.user} />
+        <MyCard user={this.state.user} />
         <HeaderStyles>My Github Followers</HeaderStyles>
         <AppWrapper>
           {this.state.followers &&
