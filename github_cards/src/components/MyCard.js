@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   }
 
   :hover {
-    box-shadow: 0 10px 16px -6px #888;
+    box-shadow: 0 10px 26px -6px crimson;
     transition: 0.4s ease;
   }
 `
